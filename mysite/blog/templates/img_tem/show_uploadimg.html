@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    <title>Document</title>
+</head>
+<body>
+{% include 'img_tem/header.html' %}
+
+<div class="container">
+    <h3><label for="">预测图片</label></h3>
+    <table class="table table-bordered">
+        <thead>
+        <th>图片</th>
+        <th>name</th>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td><img class="img-responsive" src="{{ img.img.url }}"/></td>
+            <td>
+                {% autoescape off %}
+                {{ img.name }}
+                {% endautoescape off %}
+
+            </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    <title>Document</title>
+</head>
+<body>
+{% include 'img_tem/header.html' %}
+
+<div class="container">
+    <h3><label for="">预测图片</label></h3>
+    <table class="table table-bordered">
+        <thead>
+        <th>图片</th>
+        <th>图片名称</th>
+        <th>预测结果</th>
+        <th>预测距离</th>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td><img class="img-responsive" src="{{ img.img.url }}"/>
+            </td>
+            <td>
+                {{ img.name }}
+            </td>
+
+            <td>
+                <ul>
+                    {% for name in name_list %}
+
+                        <img width="200" height="200" class="" src="/media/re_train_img/{{name}}.jpg"/>
+
+                        <li>
+                            {{ name }}
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    {% for dis in dis_list %}
+
+                        <li>
+                            {{ dis }}
+                        </li>
+
+                    {% endfor %}
+                </ul>
+
+            </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
